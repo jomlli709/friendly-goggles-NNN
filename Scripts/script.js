@@ -1,81 +1,63 @@
+// Log readiness
+console.log("Ready!");
 
-
-// Readying console
-console.log("Ready!"); 
-
-
-// This array shall be used to hold the default schedule prior to making any changes // 
+// Default schedule object
 const defaultschedule = {
-  ExamDateOne:"2024-11-24", 
-  ExamNameOne:"Adv IT Infrastructure",
-  ExamTimeOne:"23:59",
+  ExamDateOne: "2024-11-24",
+  ExamNameOne: "Adv IT Infrastructure",
+  ExamTimeOne: "23:59",
   ExamOneLocal: "Online",
-  ExamDateTwo:"2024-11-25",
-  ExamNameTwo:"Art Appreciation",
-  ExamTimeTwo:"09:00",
-  ExamTwoLocal: "Online", 
-  ExamDateThree:"2024-11-26",
-  ExamNameThree:"Web Development", 
-  ExamTimeThree:"23:59",
-  ExamThreeLocal: "Online", 
+  ExamDateTwo: "2024-11-25",
+  ExamNameTwo: "Art Appreciation",
+  ExamTimeTwo: "09:00",
+  ExamTwoLocal: "Online",
+  ExamDateThree: "2024-11-26",
+  ExamNameThree: "Web Development",
+  ExamTimeThree: "23:59",
+  ExamThreeLocal: "Online",
   RememberMe: true
 };
 
+// Load default schedule into form
+document.getElementById('Default-Schedule').addEventListener("click", function () {
+  document.getElementById('ExamDateOne').value = defaultschedule.ExamDateOne;
+  document.getElementById('ExamNameOne').value = defaultschedule.ExamNameOne;
+  document.getElementById('ExamTimeOne').value = defaultschedule.ExamTimeOne;
+  document.getElementById(defaultschedule.ExamOneLocal === "Online" ? "Online1" : "In-Person1").checked = true;
 
-// This will load into the input fields the default schedule from the JSON File
-const loaddefault = document.getElementById('Default-Schedule');
-loaddefault.addEventListener("click", function()  {
-  // document.getElementById('Default-Schedule').addEventListener('click', () => { 
-    document.getElementById('ExamDateOne').value = defaultschedule.ExamDateOne; 
-    document.getElementById('ExamNameOne').value = defaultschedule.ExamNameOne; 
-    document.getElementById('ExamTimeOne').value = defaultschedule.ExamTimeOne; 
-    if(defaultschedule.ExamOneLocal == 'Online' ){ 
-      document.querySelectorAll(".Online1").checked = true;}
-    else {
-      document.querySelectorAll(".In-Person1").checked = true; 
-    }  
-   
-    document.getElementById('ExamDateTwo').value = defaultschedule.ExamDateTwo; 
-    document.getElementById('ExamNameTwo').value = defaultschedule.ExamNameTwo; 
-    document.getElementById('ExamTimeTwo').value = defaultschedule.ExamTimeTwo; 
-  if(defaultschedule.ExamTwoLocal == 'Online') { 
-      document.querySelectorAll(".Online2").checked = true;}
-    else {
-      document.querySelectorAll(".In-Person2").checked = true; 
-    }  
-   
-    document.getElementById('ExamDateThree').value = defaultschedule.ExamDateThree; 
-    document.getElementById('ExamNameThree').value = defaultschedule.ExamNameThree; 
-    document.getElementById('ExamTimeThree').value = defaultschedule.ExamTimeThree; 
-if(defaultschedule.ExamThreeLocal == 'Online') { 
-      document.querySelectorAll(".Online3").checked = true;}
-    else {
-      document.querySelectorAll(".In-Person3").checked = true; 
-    }  
-   
-    document.getElementById('RememberMe').value = defaultschedule.RememberMe; 
-  });
+  document.getElementById('ExamDateTwo').value = defaultschedule.ExamDateTwo;
+  document.getElementById('ExamNameTwo').value = defaultschedule.ExamNameTwo;
+  document.getElementById('ExamTimeTwo').value = defaultschedule.ExamTimeTwo;
+  document.getElementById(defaultschedule.ExamTwoLocal === "Online" ? "Online2" : "In-Person2").checked = true;
+
+  document.getElementById('ExamDateThree').value = defaultschedule.ExamDateThree;
+  document.getElementById('ExamNameThree').value = defaultschedule.ExamNameThree;
+  document.getElementById('ExamTimeThree').value = defaultschedule.ExamTimeThree;
+  document.getElementById(defaultschedule.ExamThreeLocal === "Online" ? "Online3" : "In-Person3").checked = true;
+
+  document.getElementById('RememberMe').checked = defaultschedule.RememberMe;
 });
 
-// This is the new schedule produced based on the
-const NewSchedule = document.getElementById('Print-Schedule'); 
-NewSchedule.addEventListener("click", function() { 
-  let ExamDateOne = document.getElementById('ExamDateOne').value;
-  let ExamNameOne = document.getElementById('ExamNameOne').value;
-  let ExamTimeOne = document.getElementById('ExamTimeOne').value;
-  let ExamOneLocal = document.getElementById('ExamOneLocal').value;
-  let ExamDateTwo = document.getElementById('ExamDateTwo').value;
-  let ExamNameTwo = document.getElementById('ExamNameTwo').value;
-  let ExamTimeTwo = document.getElementById('ExamTimeTwo').value;
-  let ExamTwoLocal = document.getElementById('ExamTwoLocal').value;
-  let ExamDateThree = document.getElementById('ExamDateThree').value; 
-  let ExamNameThree = document.getElementById('ExamNameThree').value;
-  let ExamTimeThree = document.getElementById('ExamTimeThree').value;
-  let ExamThreeLocal = document.getElementById('ExamThreeLocal').value;
-  }
-  );
+// Generate new schedule and log to console
+document.getElementById('Print-Schedule').addEventListener("click", function (event) {
+  event.preventDefault();
 
-  document.addEventListener("submit", function()  {
-  console.log(JSON.stringify(NewSchedule));
-  document.getElementById("Final_Schedule").innerText = JSON.stringify(NewSchedule);
-  });
+  const NewSchedule = {
+    ExamDateOne: document.getElementById('ExamDateOne').value,
+    ExamNameOne: document.getElementById('ExamNameOne').value,
+    ExamTimeOne: document.getElementById('ExamTimeOne').value,
+    ExamOneLocal: document.querySelector('input[name="In-Person1"]:checked') ? "In-Person" : "Online",
+    ExamDateTwo: document.getElementById('ExamDateTwo').value,
+    ExamNameTwo: document.getElementById('ExamNameTwo').value,
+    ExamTimeTwo: document.getElementById('ExamTimeTwo').value,
+    ExamTwoLocal: document.querySelector('input[name="In-Person2"]:checked') ? "In-Person" : "Online",
+    ExamDateThree: document.getElementById('ExamDateThree').value,
+    ExamNameThree: document.getElementById('ExamNameThree').value,
+    ExamTimeThree: document.getElementById('ExamTimeThree').value,
+    ExamThreeLocal: document.querySelector('input[name="In-Person3"]:checked') ? "In-Person" : "Online",
+    RememberMe: document.getElementById('RememberMe').checked
+  };
+
+  console.log(JSON.stringify(NewSchedule, null, 2));
+  document.getElementById("Final-Schedule").innerText = JSON.stringify(NewSchedule, null, 2);
+});
