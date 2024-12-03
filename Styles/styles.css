@@ -1,0 +1,31 @@
+.container-fluid {
+    text-align: center; 
+    font-family: 'Times New Roman', Times, serif; 
+}
+
+.header { 
+    text-align: center; 
+    color: white;
+    font-family: 'Times New Roman', Times, serif; 
+}
+
+.footer {
+    position: fixed;
+    left: 0; 
+    bottom: 0;
+    width: 100%; 
+    color: white;
+    text-align: center; 
+    font-family: 'Times New Roman', Times, serif; 
+}
+
+body { 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-size: cover;
+    background-image: url('../Pictures/Chalkboard.jpg'); 
+    color: white; 
+}
+
+
+
