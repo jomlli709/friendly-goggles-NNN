@@ -7,10 +7,20 @@ body {
     color: white; 
 }
 
-header, footer {
-    background-color: #f8f9fa;
-    padding: 10px 0;
-    text-align: center;
+.header { 
+    text-align: center; 
+    color: white;
+    font-family: 'Times New Roman', Times, serif; 
+}
+
+.footer {
+    position: fixed;
+    left: 0; 
+    bottom: 0;
+    width: 100%; 
+    color: white;
+    text-align: center; 
+    font-family: 'Times New Roman', Times, serif; 
 }
 
 button {
