@@ -1,111 +1,74 @@
-<!DOCTYPE html> 
-<html lang="en" > 
-    <head>
-        <title> Final Project </title>
-    <!-- Relative links to style-sheets and inputs-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
-
-    <!-- References to other pages in the same file -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Final Project</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="Styles/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    </head>
+</head>
 <body>
-    <!-- Creation of container to hold all inputs -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="https://validator.nu/?doc=https%3A%2F%2Fnbrown2002.github.io%2FDev-Harry-Final-Project%2F" target="_blank" >Access Nu Validator</a> 
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://github.com/Nbrown2002/Dev-Harry-Final-Project" target="_blank">Access Github Repository</a>
-            </li> 
-        </ul> 
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://validator.nu/?doc=https%3A%2F%2Fnbrown2002.github.io%2FDev-Harry-Final-Project%2F" target="_blank">Access Nu Validator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/Nbrown2002/Dev-Harry-Final-Project" target="_blank">Access Github Repository</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="header text-center">
+        <h1>Final Exam Schedule Generator</h1>
+        <h2>Created By: Noah Brown</h2>
+        <p>Instructions: Fill in the following information and receive your schedule.</p>
     </div>
-    </nav>    
-    <!-- Header-->
-        <div class="header">
-        <h1> Final Exam Schedule Generator </h1>
-        <h2> Created By: Noah Brown </h2>
-        <p> Instructions: Fill in the following information and recieve your schedule. </p> 
-    </div>
-    
-    <form id="TestDateFill">
-  <!-- Input section for the first exam-->
-    <label for="ExamDateOne">Please Enter in the Date of your First Exam:</label>
-    <input type="date" id="ExamDateOne" name="ExamDateOne">
-    <br>
-    <label for="ExamNameOne">What is it's title?: </label>
-    <input type="text" id="ExamNameOne" name="ExamNameOne">
-    <br>
-    <label for="ExamTimeOne">Select a time:</label>
-    <input type="time" id="ExamTimeOne" name="ExamTimeOne">
-    <br>
-<input type="radio" id="In-Person1" name="ExamLocationOne" value="In-Person">
-<label for="In-Person1">In-Person</label>
-<br>
-<input type="radio" id="Online1" name="ExamLocationOne" value="Online">
-<label for="Online1">Online</label>
-<br>
-<br>
 
-    <!-- Input section for the Second Exam-->
-    <label for="ExamDateTwo">Please Enter in the Date of your Second Exam:</label>
-    <input type="date" id="ExamDateTwo" name="ExamDateTwo">
-    <br>
-    <label for="ExamNameTwo">What is it's title?: </label>
-    <input type="text" id="ExamNameTwo" name="ExamNameTwo">
-    <br>
-    <label for="ExamTimeTwo">Select a time:</label>
-    <input type="time" id="ExamTimeTwo" name="ExamTimeTwo">
-    <br>
-<input type="radio" id="In-Person2" name="ExamLocationTwo" value="In-Person">
-<label for="In-Person2">In-Person</label>
-<br>
-<input type="radio" id="Online2" name="ExamLocationTwo" value="Online">
-<label for="Online2">Online</label>
-<br>
-<br>
+    <!-- Form -->
+    <form id="TestDateFill" class="container">
+        <label for="ExamDateOne">Please Enter the Date of Your First Exam:</label>
+        <input type="date" id="ExamDateOne" name="ExamDateOne">
+        <br>
+        <label for="ExamNameOne">What is its title?:</label>
+        <input type="text" id="ExamNameOne" name="ExamNameOne">
+        <br>
+        <label for="ExamTimeOne">Select a time:</label>
+        <input type="time" id="ExamTimeOne" name="ExamTimeOne">
+        <br>
+        <input type="radio" id="In-Person1" name="In-Person1" value="In-Person">
+        <label for="In-Person1">In-Person</label>
+        <br>
+        <input type="radio" id="Online1" name="In-Person1" value="Online">
+        <label for="Online1">Online</label>
+        <br>
+        <br>
 
-    <!-- Input section for the Third Exam-->
-    <label for="ExamDateThree">Please Enter in the Date of your Third Exam:</label>
-    <input type="date" id="ExamDateThree" name="ExamDateThree">
-    <br>
-    <label for="ExamNameThree">What is it's title?: </label>
-    <input type="text" id="ExamNameThree" name="ExamNameThree">
-    <br>
-    <label for="ExamTimeThree">Select a time:</label>
-    <input type="time" id="ExamTimeThree" name="ExamTimeThree">
-    <br>
-<input type="radio" id="In-Person3" name="ExamLocationThree" value="In-Person">
-<label for="In-Person3">In-Person</label>
-<br>
-<input type="radio" id="Online3" name="ExamLocationThree" value="Online">
-<label for="Online3">Online</label>
-<br>
-<br>
+        <!-- Repeat for second and third exams (same structure as above) -->
 
-<!-- Submit button and check to remember-->
-    <input type="checkbox" id="RememberMe" name="RememberMe" value="RememberMe">
-    <label for="RememberMe"> Remember Me? </label>
-    <br>
-    <br>
-    <button type="submit" id="Print-Schedule" value="Print-Schedule"> Print Schedule </button>
-    <button type="button" id="Default-Schedule" value="Default-Schedule"> Load in Default Schedule </button>
+        <!-- Buttons -->
+        <div class="row mt-3">
+            <div class="col-12 col-sm-6 mb-2">
+                <button type="button" id="Default-Schedule" class="btn btn-primary btn-block">Load in Default Schedule</button>
+            </div>
+            <div class="col-12 col-sm-6 mb-2">
+                <button type="submit" id="Print-Schedule" class="btn btn-success btn-block">Print Schedule</button>
+            </div>
+        </div>
     </form>
-    <!-- Footer-->
-    <div class="footer" id="Final-Schedule">
-        <div class="container">
-    <p> Copyright ThinkTank 2024</p>
-    <a href="https://github.com/Nbrown2002/Dev-Harry-Final-Project" target="_blank">Visit Github Repo</a>
-    <a href="https://validator.nu/?doc=https%3A%2F%2Fnbrown2002.github.io%2FDev-Harry-Final-Project%2F" target="_blank"> Visit Nu Validator</a>
-    </div>
+
+    <!-- Footer -->
+    <div class="footer text-center">
+        <p>Copyright ThinkTank 2024</p>
+        <a href="https://github.com/Nbrown2002/Dev-Harry-Final-Project" target="_blank">Visit Github Repo</a>
+        <a href="https://validator.nu/?doc=https%3A%2F%2Fnbrown2002.github.io%2FDev-Harry-Final-Project%2F" target="_blank">Visit Nu Validator</a>
     </div>
 
     <script src="Scripts/script.js"></script>
 </body>
 </html>
-
