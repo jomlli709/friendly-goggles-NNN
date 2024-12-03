@@ -46,18 +46,18 @@ document.getElementById('Print-Schedule').addEventListener("click", function (ev
     ExamDateOne: document.getElementById('ExamDateOne').value,
     ExamNameOne: document.getElementById('ExamNameOne').value,
     ExamTimeOne: document.getElementById('ExamTimeOne').value,
-    ExamOneLocal: document.querySelector('input[name="In-Person1"]:checked') ? "In-Person" : "Online",
+    ExamOneLocal: document.querySelector('input[name="ExamLocationOne"]:checked')?.value || "Online",
     ExamDateTwo: document.getElementById('ExamDateTwo').value,
     ExamNameTwo: document.getElementById('ExamNameTwo').value,
     ExamTimeTwo: document.getElementById('ExamTimeTwo').value,
-    ExamTwoLocal: document.querySelector('input[name="In-Person2"]:checked') ? "In-Person" : "Online",
+    ExamTwoLocal: document.querySelector('input[name="ExamLocationTwo"]:checked')?.value || "Online",
     ExamDateThree: document.getElementById('ExamDateThree').value,
     ExamNameThree: document.getElementById('ExamNameThree').value,
     ExamTimeThree: document.getElementById('ExamTimeThree').value,
-    ExamThreeLocal: document.querySelector('input[name="In-Person3"]:checked') ? "In-Person" : "Online",
+    ExamThreeLocal: document.querySelector('input[name="ExamLocationThree"]:checked')?.value || "Online",
     RememberMe: document.getElementById('RememberMe').checked
   };
 
   console.log(JSON.stringify(NewSchedule, null, 2));
-  document.getElementById("Final-Schedule").innerText = JSON.stringify(NewSchedule, null, 2);
+  document.getElementById("Final-Schedule").innerHTML = `<pre>${JSON.stringify(NewSchedule, null, 2)}</pre>`;
 });
