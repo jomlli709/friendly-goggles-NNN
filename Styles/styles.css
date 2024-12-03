@@ -33,3 +33,9 @@ button {
         font-size: 14px;
     }
 }
+
+.btn-custom {
+    width: auto;
+    display: inline-block;
+    margin: 10px 5px;
+}
