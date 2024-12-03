@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project</title>
+    <!-- External Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+    <!-- Styles -->
     <link rel="stylesheet" href="Styles/styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <!-- Navbar -->
@@ -17,58 +20,74 @@
                     <a class="nav-link" href="https://validator.nu/?doc=https%3A%2F%2Fnbrown2002.github.io%2FDev-Harry-Final-Project%2F" target="_blank">Access Nu Validator</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/Nbrown2002/Dev-Harry-Final-Project" target="_blank">Access Github Repository</a>
+                    <a class="nav-link" href="https://github.com/Nbrown2002/Dev-Harry-Final-Project" target="_blank">Access GitHub Repository</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <!-- Header -->
-    <div class="header text-center">
+    <div class="header">
         <h1>Final Exam Schedule Generator</h1>
         <h2>Created By: Noah Brown</h2>
         <p>Instructions: Fill in the following information and receive your schedule.</p>
     </div>
 
     <!-- Form -->
-    <form id="TestDateFill" class="container">
-        <label for="ExamDateOne">Please Enter the Date of Your First Exam:</label>
-        <input type="date" id="ExamDateOne" name="ExamDateOne">
-        <br>
+    <form id="TestDateFill">
+        <!-- Input for First Exam -->
+        <label for="ExamDateOne">Please Enter the Date of your First Exam:</label>
+        <input type="date" id="ExamDateOne" name="ExamDateOne"><br>
         <label for="ExamNameOne">What is its title?:</label>
-        <input type="text" id="ExamNameOne" name="ExamNameOne">
-        <br>
+        <input type="text" id="ExamNameOne" name="ExamNameOne"><br>
         <label for="ExamTimeOne">Select a time:</label>
-        <input type="time" id="ExamTimeOne" name="ExamTimeOne">
-        <br>
+        <input type="time" id="ExamTimeOne" name="ExamTimeOne"><br>
         <input type="radio" id="In-Person1" name="In-Person1" value="In-Person">
-        <label for="In-Person1">In-Person</label>
-        <br>
+        <label for="In-Person1">In-Person</label><br>
         <input type="radio" id="Online1" name="In-Person1" value="Online">
-        <label for="Online1">Online</label>
-        <br>
-        <br>
+        <label for="Online1">Online</label><br><br>
 
-        <!-- Repeat for second and third exams (same structure as above) -->
+        <!-- Input for Second Exam -->
+        <label for="ExamDateTwo">Please Enter the Date of your Second Exam:</label>
+        <input type="date" id="ExamDateTwo" name="ExamDateTwo"><br>
+        <label for="ExamNameTwo">What is its title?:</label>
+        <input type="text" id="ExamNameTwo" name="ExamNameTwo"><br>
+        <label for="ExamTimeTwo">Select a time:</label>
+        <input type="time" id="ExamTimeTwo" name="ExamTimeTwo"><br>
+        <input type="radio" id="In-Person2" name="In-Person2" value="In-Person">
+        <label for="In-Person2">In-Person</label><br>
+        <input type="radio" id="Online2" name="In-Person2" value="Online">
+        <label for="Online2">Online</label><br><br>
 
-        <!-- Buttons -->
-        <div class="row mt-3">
-            <div class="col-12 col-sm-6 mb-2">
-                <button type="button" id="Default-Schedule" class="btn btn-primary btn-block">Load in Default Schedule</button>
-            </div>
-            <div class="col-12 col-sm-6 mb-2">
-                <button type="submit" id="Print-Schedule" class="btn btn-success btn-block">Print Schedule</button>
-            </div>
-        </div>
+        <!-- Input for Third Exam -->
+        <label for="ExamDateThree">Please Enter the Date of your Third Exam:</label>
+        <input type="date" id="ExamDateThree" name="ExamDateThree"><br>
+        <label for="ExamNameThree">What is its title?:</label>
+        <input type="text" id="ExamNameThree" name="ExamNameThree"><br>
+        <label for="ExamTimeThree">Select a time:</label>
+        <input type="time" id="ExamTimeThree" name="ExamTimeThree"><br>
+        <input type="radio" id="In-Person3" name="In-Person3" value="In-Person">
+        <label for="In-Person3">In-Person</label><br>
+        <input type="radio" id="Online3" name="In-Person3" value="Online">
+        <label for="Online3">Online</label><br><br>
+
+        <!-- Options -->
+        <input type="checkbox" id="RememberMe" name="RememberMe" value="RememberMe">
+        <label for="RememberMe">Remember Me?</label><br><br>
+        <button type="button" id="Print-Schedule" value="Print-Schedule">Print Schedule</button>
+        <button type="button" id="Default-Schedule" value="Default-Schedule">Load in Default Schedule</button>
     </form>
 
     <!-- Footer -->
-    <div class="footer text-center">
-        <p>Copyright ThinkTank 2024</p>
-        <a href="https://github.com/Nbrown2002/Dev-Harry-Final-Project" target="_blank">Visit Github Repo</a>
-        <a href="https://validator.nu/?doc=https%3A%2F%2Fnbrown2002.github.io%2FDev-Harry-Final-Project%2F" target="_blank">Visit Nu Validator</a>
+    <div class="footer" id="Final-Schedule">
+        <div class="container">
+            <p>Copyright ThinkTank 2024</p>
+            <a href="https://github.com/Nbrown2002/Dev-Harry-Final-Project" target="_blank">Visit GitHub Repo</a>
+            <a href="https://validator.nu/?doc=https%3A%2F%2Fnbrown2002.github.io%2FDev-Harry-Final-Project%2F" target="_blank">Visit Nu Validator</a>
+        </div>
     </div>
 
+    <!-- Script -->
     <script src="Scripts/script.js"></script>
 </body>
 </html>
