@@ -28,7 +28,7 @@ body {
     }
 }
 
-.btn-custom {
+button {
     width: auto;
     display: inline-block;
     margin: 10px 5px;
